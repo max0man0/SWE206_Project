@@ -1,14 +1,15 @@
 package competitionManager;
+import java.net.URL;
 import java.util.Date;
 import java.util.LinkedList;
 
 public abstract class Competition {
 	
 	private String name;
-	private String link;
+	private URL link;
 	private Date dueDate;
 	
-	public Competition(String newName, String newlink, Date newDate) {
+	public Competition(String newName, URL newlink, Date newDate) {
 		name = newName;
 		link = newlink;
 		dueDate = newDate;
@@ -29,11 +30,11 @@ public abstract class Competition {
 		this.name = name;
 	}
 
-	public String getLink() {
+	public URL getLink() {
 		return link;
 	}
 
-	public void setLink(String link) {
+	public void setLink(URL link) {
 		this.link = link;
 	}
 
@@ -43,6 +44,13 @@ public abstract class Competition {
 
 	public void setDueDate(Date dueDate) {
 		this.dueDate = dueDate;
+	}
+	
+	public boolean equals(Competition competition) {
+		if (this.name.equals(competition.getName())) 
+			return true;
+		else 
+			return false;
 	}
 	
 }

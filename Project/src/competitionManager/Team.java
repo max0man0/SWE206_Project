@@ -19,6 +19,10 @@ public class Team {
 	public void addParticipant(String name,String id,String major) {
 		participants.add(new Participant(id, major, name, rank));
 	}
+	
+	public void deleteParticipant(int index) {
+		participants.remove(index);
+	}
 
 	public String getName() {
 		return name;

@@ -54,6 +54,13 @@ public class Participant {
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
+
+	public boolean equals(Participant p) {
+		if (this.getId().equals(p.getId()))
+			return true;
+		else 
+			return false;
+	}
 	
 	
 	

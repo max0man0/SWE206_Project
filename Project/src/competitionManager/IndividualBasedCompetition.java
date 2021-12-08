@@ -1,4 +1,5 @@
 package competitionManager;
+import java.net.URL;
 import java.util.Date;
 import java.util.LinkedList;
 
@@ -6,7 +7,7 @@ public class IndividualBasedCompetition extends Competition {
 	
 	private LinkedList<Participant> participants = new LinkedList<>();
 	
-	public IndividualBasedCompetition(String newName, String newlink, Date newDate) {
+	public IndividualBasedCompetition(String newName, URL newlink, Date newDate) {
 		super(newName, newlink, newDate);
 	}
 	
@@ -18,8 +19,11 @@ public class IndividualBasedCompetition extends Competition {
 
 	@Override
 	public void deleteParticipant(Participant participant) {
-		// TODO Auto-generated method stub
-		
+		for (int i = 0; i < participants.size(); i++) {
+			if (participants.get(i).equals(participant)) {
+				participants.remove(i);
+			}
+		}
 	}
 
 
