@@ -10,10 +10,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.MainController">
+<BorderPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.CreateCompetitionController">
    <center>
-      <VBox prefHeight="500.0" prefWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" spacing="10.0">
                <children>
@@ -26,7 +27,7 @@
             <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="10.0">
                <children>
                   <Label text="Competition Website:" />
-                  <TextField fx:id="tfCreateCompetitionWebsite" />
+                  <TextField fx:id="tfCreateCompetitionWebsite" promptText="http://example.com" />
                </children>
                <padding>
                   <Insets top="10.0" />
@@ -35,7 +36,7 @@
             <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="10.0">
                <children>
                   <Label text="Due Date:" />
-                  <DatePicker fx:id="dpCreateCompetitionDueDate" />
+                  <DatePicker fx:id="dpCreateCompetitionDueDate" editable="false" />
                </children>
                <padding>
                   <Insets top="10.0" />
@@ -46,12 +47,12 @@
                   <Label text="Competition Type" />
                   <HBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <RadioButton mnemonicParsing="false" text="Team Based">
+                        <RadioButton fx:id="rbTeamBased" mnemonicParsing="false" text="Team Based">
                            <toggleGroup>
                               <ToggleGroup fx:id="competitionType" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="Individual Based" toggleGroup="$competitionType" />
+                        <RadioButton fx:id="rbIndividualBased" mnemonicParsing="false" text="Individual Based" toggleGroup="$competitionType" />
                      </children>
                   </HBox>
                </children>
@@ -76,4 +77,14 @@
          </padding>
       </HBox>
    </bottom>
+   <top>
+      <Label fx:id="lbWarning" contentDisplay="BOTTOM" text="Label" textFill="RED" underline="true" visible="false" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
 </BorderPane>

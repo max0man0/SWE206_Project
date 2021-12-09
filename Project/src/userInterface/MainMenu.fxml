@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.MainController">
+<BorderPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.MainMenuController">
    <center>
       <TabPane fx:id="tpCompetitions" prefHeight="500.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
    </center>
@@ -17,14 +17,13 @@
             <items>
               <MenuItem mnemonicParsing="false" onAction="#showCreateCompetitionWindow" text="New Competition" />
                   <MenuItem mnemonicParsing="false" onAction="#showAddParticipantWindow" text="New Participant" />
-                  <MenuItem mnemonicParsing="false" onAction="#writeExcel" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#save" text="Save" />
                   <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Exit" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#showEditCompetitionWindow" text="Edit Competition Details" />
-                  <MenuItem mnemonicParsing="false" onAction="#undo" text="Undo" />
                   <MenuItem mnemonicParsing="false" onAction="#prepareEmail" text="Prepare Email" />
             </items>
           </Menu>
