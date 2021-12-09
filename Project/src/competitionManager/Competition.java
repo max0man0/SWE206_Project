@@ -1,25 +1,25 @@
 package competitionManager;
 import java.net.URL;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.LinkedList;
 
 public abstract class Competition {
 	
 	private String name;
 	private URL link;
-	private Date dueDate;
+	private LocalDate dueDate;
 	
-	public Competition(String newName, URL newlink, Date newDate) {
+	public Competition(String newName, URL newlink, LocalDate newDate) {
 		name = newName;
 		link = newlink;
 		dueDate = newDate;
 	}
 	
-	abstract void deleteParticipant(Participant participant);
+	public abstract void deleteParticipant(Participant participant);
 
-	abstract int getParticipantCount();
+	public abstract int getParticipantCount();
 
-	abstract LinkedList<Participant> getParticipants();
+	public abstract LinkedList<Participant> getParticipants();
 
 	
 	public String getName() {
@@ -38,11 +38,11 @@ public abstract class Competition {
 		this.link = link;
 	}
 
-	public Date getDueDate() {
+	public LocalDate getDueDate() {
 		return dueDate;
 	}
 
-	public void setDueDate(Date dueDate) {
+	public void setDueDate(LocalDate dueDate) {
 		this.dueDate = dueDate;
 	}
 	
@@ -51,6 +51,11 @@ public abstract class Competition {
 			return true;
 		else 
 			return false;
+	}
+	
+	@Override
+	public String toString() {
+		return name + " " + link.toString() + " " + dueDate.toString();
 	}
 	
 }

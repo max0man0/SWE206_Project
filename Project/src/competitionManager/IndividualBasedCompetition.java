@@ -1,19 +1,19 @@
 package competitionManager;
 import java.net.URL;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.LinkedList;
 
 public class IndividualBasedCompetition extends Competition {
 	
 	private LinkedList<Participant> participants = new LinkedList<>();
 	
-	public IndividualBasedCompetition(String newName, URL newlink, Date newDate) {
+	public IndividualBasedCompetition(String newName, URL newlink, LocalDate newDate) {
 		super(newName, newlink, newDate);
 	}
 	
 	
-	public void addParticipant(String name,String id,String major,int rank) {
-		participants.add(new Participant(id, major, name, rank));
+	public void addParticipant(String name,String id,String major) {
+		participants.add(new Participant(id, major, name));
 	}
 
 
@@ -37,5 +37,9 @@ public class IndividualBasedCompetition extends Competition {
 	public LinkedList<Participant> getParticipants() {
 		return participants;
 	};
-
+	
+	@Override
+	public String toString() {
+		return super.toString() + " Individual Based Competition";
+	}
 }

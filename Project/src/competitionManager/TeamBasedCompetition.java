@@ -1,6 +1,6 @@
 package competitionManager;
 import java.net.URL;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.LinkedList;
 
 public class TeamBasedCompetition extends Competition {
@@ -8,12 +8,19 @@ public class TeamBasedCompetition extends Competition {
 	private LinkedList<Team> teams = new LinkedList<Team>();
 	
 	
-	public TeamBasedCompetition(String newName, URL newlink, Date newDate) {
+	public TeamBasedCompetition(String newName, URL newlink, LocalDate newDate) {
 		super(newName, newlink, newDate);
 	}
 
-	public void addParticipant(String name,String id,String major,int rank, int teamNum) {
-		teams.get(teamNum).addParticipant(name, id, major);
+	public void addParticipant(String name,String id,String major, String teamName) {
+		for (int i = 0; i < teams.size(); i++) {
+			if(teams.get(i).getName().equals(teamName)) {
+				teams.get(i).addParticipant(name, id, major);
+				return;
+			}
+		}
+		teams.add(new Team(teamName));
+		teams.get(teams.size()-1).addParticipant(teamName, id, major);
 	}
 
 	@Override
@@ -46,5 +53,8 @@ public class TeamBasedCompetition extends Competition {
 		return participants;
 	};
 	
-	
+	@Override
+	public String toString() {
+		return super.toString() + " Team Based Competition";
+	}
 }

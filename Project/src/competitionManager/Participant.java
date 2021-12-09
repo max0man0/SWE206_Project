@@ -8,11 +8,10 @@ public class Participant {
 	private int rank = 0;
 	
 	
-	public Participant(String newId, String newMajor, String newName, int newRank) {
+	public Participant(String newId, String newMajor, String newName) {
 		id = newId;
 		major = newMajor;
 		name = newName;
-		rank = newRank;
 	}
 
 

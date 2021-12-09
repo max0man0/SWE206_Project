@@ -1,16 +1,18 @@
 package competitionManager;
 
 import java.net.URL;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.LinkedList;
 
 public class CompetitionManager {
 	
 	LinkedList<Competition> competitions = new LinkedList<>();
 
+	
+
 	public CompetitionManager() {}
 	
-	public void createCompetition(String name, URL link, Date dueDate, boolean isTeam) {
+	public void createCompetition(String name, URL link, LocalDate dueDate, boolean isTeam) {
 		if (isTeam) {
 			competitions.add(new TeamBasedCompetition(name, link, dueDate));
 		}else {
@@ -25,5 +27,9 @@ public class CompetitionManager {
 				competitions.remove(i);
 			
 		}
+	}
+	
+	public LinkedList<Competition> getCompetitions() {
+		return competitions;
 	}
 }
