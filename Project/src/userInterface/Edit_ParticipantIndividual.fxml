@@ -66,13 +66,22 @@
       </HBox>
    </bottom>
    <top>
-      <Label fx:id="lbCompetitionNameIndividual" alignment="BOTTOM_CENTER" text="Competition" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
+         <children>
+            <Label fx:id="lbCompetitionNameIndividual" alignment="BOTTOM_CENTER" text="Competition">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbWarning" text="Label" textFill="RED" underline="true" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
    </top>
 </BorderPane>

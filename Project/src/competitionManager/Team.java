@@ -18,7 +18,7 @@ public class Team {
 
 
 	public void addParticipant(String name,String id,String major) {
-		participants.add(new Participant(id, major, name));
+		participants.add(new Participant(name, id, major, this));
 	}
 	
 	public void deleteParticipant(int index) {
@@ -52,5 +52,10 @@ public class Team {
 
 	public void setRank(int rank) {
 		this.rank = rank;
+	}
+	
+	@Override
+	public String toString() {
+		return this.name;
 	}
 }

@@ -5,15 +5,34 @@ public class Participant {
 	private String id;
 	private String major;
 	private String name;
+	private Team team = null;
 	private int rank = 0;
 	
 	
-	public Participant(String newId, String newMajor, String newName) {
+	public Participant(String newName, String newId, String newMajor, Team newTeam) {
+		id = newId;
+		major = newMajor;
+		name = newName;
+		team = newTeam;
+	}
+	
+	public Participant(String newName, String newId, String newMajor) {
 		id = newId;
 		major = newMajor;
 		name = newName;
 	}
+	
+	public int getTeamNumber() {
+		return team.getNumber();
+	}
+	
+	public Team getTeam() {
+		return team;
+	}
 
+	public void setTeam(Team team) {
+		this.team = team;
+	}
 
 	public String getId() {
 		return id;
@@ -46,12 +65,22 @@ public class Participant {
 
 
 	public int getRank() {
-		return rank;
+		if (team == null) {
+			return rank;
+		}
+		else {
+			return team.getRank();
+		}
 	}
 
 
 	public void setRank(int rank) {
-		this.rank = rank;
+		if (team == null) {
+			this.rank = rank;
+		}
+		else {
+			team.setRank(rank);
+		}
 	}
 
 	public boolean equals(Participant p) {
@@ -60,7 +89,5 @@ public class Participant {
 		else 
 			return false;
 	}
-	
-	
 	
 }

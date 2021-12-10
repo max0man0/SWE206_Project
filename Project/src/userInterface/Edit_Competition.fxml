@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userInterface.EditCompetitionController">
    <center>
@@ -33,7 +34,7 @@
             <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="10.0">
                <children>
                   <Label text="Due Date:" />
-                  <DatePicker fx:id="dpEditCompetitionDueDate" />
+                  <DatePicker fx:id="dpEditCompetitionDueDate" editable="false" />
                </children>
                <padding>
                   <Insets top="10.0" />
@@ -56,4 +57,13 @@
          </padding>
       </HBox>
    </bottom>
+   <top>
+      <Label fx:id="lbWarning" text="Label" textFill="RED" underline="true" visible="false" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin></Label>
+   </top>
 </BorderPane>

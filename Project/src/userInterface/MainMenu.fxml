@@ -24,12 +24,11 @@
           <Menu mnemonicParsing="false" text="Edit">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#showEditCompetitionWindow" text="Edit Competition Details" />
-                  <MenuItem mnemonicParsing="false" onAction="#prepareEmail" text="Prepare Email" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#showAboutWindow" text="About Competition Manager" />
+              <MenuItem mnemonicParsing="false" onAction="#showAboutWindow" text="Help" />
             </items>
           </Menu>
         </menus>

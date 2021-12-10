@@ -47,11 +47,20 @@ public class CreateCompetitionController {
     @FXML
     void createCompetition(ActionEvent event) throws IOException{
     	String competitionName = tfCreateCompetitionName.getText();
-    	
+    	if (competitionName.equals("")) {
+    		lbWarning.setText("The competition name is not entered");
+    		lbWarning.setVisible(true);
+    		return;
+    	}
     	URL CompetitionWebsite = null;
 		try {
 			CompetitionWebsite = new URL(tfCreateCompetitionWebsite.getText());
 			LocalDate localDate = dpCreateCompetitionDueDate.getValue();
+			if (localDate == null) {
+				lbWarning.setText("The competition due date is not selected");
+	    		lbWarning.setVisible(true);
+	    		return;
+			}
 	    	if (rbIndividualBased.isSelected()) {
 	    		Main.competitionManager.createCompetition(competitionName, CompetitionWebsite, localDate, false);
 	    	}
@@ -59,21 +68,21 @@ public class CreateCompetitionController {
 	    		Main.competitionManager.createCompetition(competitionName, CompetitionWebsite, localDate, true);
 	    	}
 	    	else {
-	    		throw new UnsupportedOperationException();
+	    		lbWarning.setText("Competition type is not selected");
+	    		lbWarning.setVisible(true);
+	    		return;
 	    	}
 	    	CommonMethods.closeWindow(event);
 	    	
-	    	Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
+	    	Parent root = loader.load();
+	    	MainMenuController controller = loader.getController();
+	    	controller.tpCompetitions.getSelectionModel().select(Main.competitionManager.getCompetitions().size()-1);
 	    	Main.primaryStage.setScene(new Scene(root));
 		}
 		catch (MalformedURLException e) {
 			lbWarning.setText("The website is not in the correct format");
 			lbWarning.setVisible(true);
 		}
-		catch (UnsupportedOperationException e) {
-			lbWarning.setText("Competition type is not selected");
-    		lbWarning.setVisible(true);
-		}
-		
     }
 }

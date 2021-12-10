@@ -1,6 +1,7 @@
 package competitionManager;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public abstract class Competition {
@@ -21,6 +22,7 @@ public abstract class Competition {
 
 	public abstract LinkedList<Participant> getParticipants();
 
+	public abstract void addParticipant(HashMap<String, String> args);
 	
 	public String getName() {
 		return name;

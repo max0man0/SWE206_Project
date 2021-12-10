@@ -29,6 +29,11 @@ public class CompetitionManager {
 		}
 	}
 	
+	public void deleteCompetition(int index) {
+		competitions.remove(index);
+	}
+	
+	
 	public LinkedList<Competition> getCompetitions() {
 		return competitions;
 	}

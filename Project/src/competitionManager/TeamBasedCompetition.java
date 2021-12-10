@@ -1,27 +1,48 @@
 package competitionManager;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class TeamBasedCompetition extends Competition {
-	
 	private LinkedList<Team> teams = new LinkedList<Team>();
 	
-	
+	public LinkedList<Team> getTeams() {
+		return teams;
+	}
+
 	public TeamBasedCompetition(String newName, URL newlink, LocalDate newDate) {
 		super(newName, newlink, newDate);
 	}
-
-	public void addParticipant(String name,String id,String major, String teamName) {
-		for (int i = 0; i < teams.size(); i++) {
-			if(teams.get(i).getName().equals(teamName)) {
-				teams.get(i).addParticipant(name, id, major);
-				return;
+	
+	@Override
+	public void addParticipant(HashMap<String, String> args) {
+		if (args.size() == 4) {
+			for (int i = 0; i < teams.size(); i++) {
+				if(teams.get(i).getName().equals(args.get("TeamName"))) {
+					teams.get(i).addParticipant(args.get("Name"), args.get("Id"), args.get("Major"));
+					return;
+				}
 			}
+			teams.add(new Team(args.get("TeamName")));
+			teams.get(teams.size()-1).addParticipant(args.get("Name"), args.get("Id"), args.get("Major"));
 		}
-		teams.add(new Team(teamName));
-		teams.get(teams.size()-1).addParticipant(teamName, id, major);
+		else {
+			throw new IllegalArgumentException("There should only be \"Name\", \"Id\", \"Major\", and \"TeamName\" keys in the hashmap");
+		}
 	}
+	
+//	public void addParticipant(String[] args) {
+//		for (int i = 0; i < teams.size(); i++) {
+//			if(teams.get(i).getName().equals(args[3])) {
+//				teams.get(i).addParticipant(args[0], args[1], args[2]);
+//				return;
+//			}
+//		}
+//		teams.add(new Team(args[3]));
+//		teams.get(teams.size()-1).addParticipant(teamName, id, major);
+//		
+//	}
 
 	@Override
 	public void deleteParticipant(Participant participant) {
@@ -57,4 +78,6 @@ public class TeamBasedCompetition extends Competition {
 	public String toString() {
 		return super.toString() + " Team Based Competition";
 	}
+
+	
 }

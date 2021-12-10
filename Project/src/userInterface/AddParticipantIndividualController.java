@@ -1,6 +1,7 @@
 package userInterface;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 import competitionManager.Competition;
@@ -51,7 +52,11 @@ public class AddParticipantIndividualController {
 	    	for (i = 0; i < competitions.size(); i++) {
 	    		if (competitions.get(i).getName().equals(lbCompetitionName.getText())) {
 	    			competition = (IndividualBasedCompetition) competitions.get(i);
-	    			competition.addParticipant(name, id, major);
+	    			HashMap<String, String> hashmap = new HashMap<>();
+	    			hashmap.put("Name", name);
+	    			hashmap.put("Id", id);
+	    			hashmap.put("Major", major);
+	    			competition.addParticipant(hashmap);
 	    			break;
 	    		}
 	    	}
