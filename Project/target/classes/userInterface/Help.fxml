@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxWidth="1000.0" minWidth="-Infinity" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Creating a new competition:">
+         <VBox.margin>
+            <Insets left="10.0" top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="20.0" text="Go to File -&gt; New Competition and fill the required information then click on Create" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+      <Line endX="600.0" startX="-2000.0" />
+      <Label layoutX="20.0" layoutY="20.0" text="Editing an existing competition:">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+      <Label layoutX="20.0" layoutY="51.0" text="Open the tab of the competition, go to Edit -&gt; Edit Competition Details and edit the desired information and then click on Save" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+      <Line endX="600.0" layoutX="111.0" layoutY="81.0" startX="-2000.0" VBox.vgrow="ALWAYS" />
+      <Label layoutX="20.0" layoutY="91.0" text="Deleting a competition:">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+      <Label layoutX="20.0" layoutY="122.0" text="Click on the X button in the tab" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+      <Line endX="600.0" layoutX="111.0" layoutY="171.0" startX="-2000.0" VBox.vgrow="ALWAYS" />
+      <Label layoutX="20.0" layoutY="91.0" text="Adding a participant to a competition:">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+      <Label layoutX="20.0" layoutY="122.0" text="Open the tab of the competition, go to File -&gt; New Participant and fill the required information and then click on Add" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+      <Line endX="600.0" layoutX="111.0" layoutY="171.0" startX="-2000.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Line>
+      <Label layoutX="20.0" layoutY="181.0" text="Editing an existing participant:">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+      <Label layoutX="20.0" layoutY="212.0" text="Open the tab of the competition, right click on the participant -&gt; Edit Participant and edit the desired information and then click on Save" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+      <Line endX="600.0" endY="0.2928932309150696" layoutX="111.0" layoutY="261.0" startX="-2000.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Line>
+      <Label layoutX="20.0" layoutY="342.0" text="Deleting a participant:">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+      <Label layoutX="20.0" layoutY="373.0" text="Open the tab of the competition, right click on the participant -&gt; Delete Participant" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+      <Line endX="600.0" endY="0.2928932309150696" layoutX="111.0" layoutY="422.0" startX="-2000.0" VBox.vgrow="ALWAYS" />
+      <Label layoutX="20.0" layoutY="433.0" text="Preparing an Email for a participant">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+      <Label layoutX="20.0" layoutY="464.0" text="Open the tab of the competition, right click on the participant -&gt; Prepare Email" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+   </children>
+</VBox>
